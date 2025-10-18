@@ -1,0 +1,82 @@
+/* Full navbar wrapper */
+.admin-bg {
+  background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  height: 90px;
+  z-index: 999;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Inner container */
+.adminNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  top:0px;
+}
+
+/* Brand section */
+.admin-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 48px;
+  object-fit: contain;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  color: #c0c9d0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.admin-brand:hover .brand-text {
+  color: #ffffff;
+}
+
+/* Logout button container */
+.admin-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Logout button */
+.logout-button {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin-bg {
+    height: 70px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .logout-button {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}

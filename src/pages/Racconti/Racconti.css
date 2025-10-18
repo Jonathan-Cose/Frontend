@@ -1,0 +1,434 @@
+
+.racconti-page {
+  background: rgba(0, 0, 0, 0.349);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  top: 30px;
+}
+.raccinti-bg {
+  background-image: url('../../assets/racconti_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+.racconti-hero-bg {
+  width: 100vw;
+  padding: 50px 0;
+  box-shadow: inset 0 -2px 12px rgba(0,0,0,0.05);
+  /* Removed position and top to fix layout collapse */
+}
+.racconti-hero {
+  /* max-width: 1100px; */
+  margin: auto;
+  padding: 0 30px;
+  text-align: center;
+  white-space: pre-line;
+}
+.racconti-title {
+  font-size: clamp(40px, 5vw, 96px); /* Using clamp() for better scaling on all screens */
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1vw;
+  font-family: 'Playfair Display Semibold', serif;
+  white-space: pre-line;
+}
+.racconti-desc {
+  font-size: clamp(16px, 1.4vw, 28px); /* Using clamp() for better scaling on all screens */
+  color: #f1f1f1;
+  /* max-width: 900px; */
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-family: 'Libre Baskerville', serif;
+  white-space: pre-line;
+}
+.racconti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2rem;
+  margin: 40px auto;
+  padding: 0 30px 60px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 60px; /* Added margin-top to create space between hero and cards */
+}
+.racconti-card {
+  background: #ffffff;
+  border: 2px solid #e0e6ed;
+  border-radius: 12px;
+  padding: 2vw;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.racconti-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  border-color: #6c63ff;
+}
+.racconti-card-heading {
+  font-size: clamp(18px, 1.8vw, 32px);
+  font-weight: 700;
+  color: #2f415a;
+  white-space: pre-line;
+}
+.racconti-card-content {
+  font-size: clamp(14px, 1.2vw, 22px);
+  color: #333;
+  line-height: 1.7;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+  font-family: 'Libre Baskerville', serif;
+  white-space: pre-line;
+}
+.racconti-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 20, 20, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.racconti-modal {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 90vw;
+  max-height: 90vh;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.racconti-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #eee;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.racconti-modal-close:hover {
+  background: #ccc;
+  transform: scale(1.1);
+}
+.racconti-modal-close .close{
+  scale: calc(10);
+}
+.racconti-modal-heading {
+  font-size: 1.9rem;
+  color: #114375;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Playfair Display Semibold', serif;
+  transition: all 1s ease-in;
+}
+.racconti-modal-heading:hover {
+  cursor: pointer;
+  width: 100%;
+}
+.racconti-modal-content {
+  color: #444;
+  line-height: 1;
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  font-family: 'Libre Baskerville', serif;
+}
+.racconti-modal-content p {
+  margin-bottom: 1.2rem;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.racconti-modal-content ul,
+.racconti-modal-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.racconti-modal-content li {
+  margin-bottom: 0.5rem;
+}
+.racconti-modal-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.racconti-modal-content th {
+  background-color: rgba(0, 0, 0, 0.062);
+}
+.racconti-modal-content th, .racconti-modal-content td {
+  border: 1px solid black;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0px); opacity: 1; }
+}
+/* Media queries for larger screens (min-width) */
+@media (min-width: 1300px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-hero {
+    padding-bottom: 200px;
+  }
+  .racconti-card{
+    position: relative;
+    top:0vh;
+  }
+  .racconti-hero {
+    max-width: 1250px;
+  }
+  .racconti-desc {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1690px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-grid, .racconti-footer .footer{
+    margin-top: 16vh;
+  }
+  .racconti-hero {
+    max-width: 1600px;
+  }
+  .racconti-desc {
+    max-width: 1500px;
+  }
+}
+@media (min-width: 1770px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-grid, .racconti-footer .footer{
+    margin-top: 25vh;
+  }
+  .racconti-hero {
+    max-width: 1700px;
+  }
+  .racconti-desc {
+    max-width: 1600px;
+  }
+}
+@media (min-width: 1830px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-grid, .racconti-footer .footer{
+    margin-top: 40vh;
+  }
+  .racconti-hero {
+    max-width: 1800px;
+  }
+  .racconti-desc {
+    max-width: 1700px;
+  }
+}
+@media (min-width: 1921px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-title {
+    font-size: 96px;
+    margin-bottom: 32px;
+  }
+  .racconti-hero {
+    max-width: 1900px;
+  }
+  .racconti-desc {
+    max-width: 1800px;
+  }
+  .racconti-desc {
+    font-size: 28px;
+  }
+  .racconti-card-heading {
+    font-size: 32px;
+  }
+  .racconti-card-content {
+    font-size: 22px;
+  }
+  .racconti-grid {
+    max-width: 1920px;
+    gap: 40px;
+  }
+}
+@media (min-width: 3841px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-title {
+    font-size: 140px;
+    margin-bottom: 48px;
+  }
+  .racconti-hero {
+    max-width: 3800px;
+  }
+  .racconti-desc {
+    max-width: 3500px;
+  }
+  .racconti-desc {
+    font-size: 40px;
+  }
+  .racconti-card-heading {
+    font-size: 50px;
+  }
+  .racconti-card-content {
+    font-size: 36px;
+  }
+  .racconti-grid {
+    max-width: 3000px;
+    gap: 60px;
+  }
+}
+/* Media queries for smaller screens (max-width) */
+@media (max-width: 1025px) {
+  .racconti-page {
+    top: 6vh;
+  }
+  .racconti-title {
+    font-size: 5vw;
+  }
+  .racconti-desc {
+    font-size: 1.8vw;
+  }
+  .racconti-card-heading {
+    font-size: 2.1vw;
+  }
+  .racconti-card-content {
+    font-size: 1.7vw;
+  }
+}
+@media (max-width: 900px) {
+  .racconti-title {
+    font-size: 4.1vw;
+  }
+  .racconti-desc {
+    font-size: 1.5vw;
+  }
+  .racconti-card-heading {
+    font-size: 2.8vw;
+  }
+  .racconti-card-content {
+    font-size: 2vw;
+  }
+  .racconti-modal-heading {
+    font-size: 3vw;
+  }
+  .racconti-modal-content {
+    font-size: 2vw;
+  }
+  .racconti-modal-close {
+    top: 10px;
+    right: 10px;
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 769px) {
+  .racconti-page {
+    top: 8vh;
+  }
+  .racconti-title {
+    font-size: 4.5vw;
+  }
+  .racconti-desc {
+    font-size: 1.5vw;
+  }
+  .racconti-hero-bg {
+    padding: 0;
+  }
+  .racconti-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+    gap: 1.5rem;
+  }
+  .racconti-card {
+    padding: 20px;
+  }
+  .racconti-card-heading {
+    font-size: 4vw;
+  }
+  .racconti-card-content {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 600px) {
+  .racconti-page {
+    top: 0vh;
+  }
+}
+@media (max-width: 426px) {
+  .racconti-page {
+    top: 0vh;
+  }
+  .racconti-title {
+    font-size: 8vw;
+    margin-bottom: 14px;
+    padding-top: 20px;
+  }
+  .racconti-desc {
+    font-size: 2.3vw;
+  }
+  .racconti-modal-close {
+    top: 0;
+    right: 0;
+    transform: scale(0.6);
+  }
+  .racconti-modal-heading {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+  .racconti-modal-content {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 376px) {
+  .racconti-desc {
+    font-size: 2vw;
+  }
+}
+@media (max-width: 321px) {
+  .racconti-modal-heading {
+    font-size: 1.2rem;
+  }
+  .racconti-modal-content {
+    font-size: 0.9rem;
+  }
+}

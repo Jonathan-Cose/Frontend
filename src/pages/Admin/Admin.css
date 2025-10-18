@@ -1,0 +1,463 @@
+
+html {
+  scroll-padding-top: 100px;
+}
+
+.admin-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff, #000000);
+  background-size: 400% 400%;
+  animation: softShift 20s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes softShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.selectionsection {
+  position: relative;
+  top: 75px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-radius: 12px;
+}
+.show{
+  opacity: 1;
+}
+.hide{
+  opacity: 0;
+  display: none;
+}
+.selectionsection .but {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: none;
+  outline: none;
+}
+
+.selectionsection .but button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #fff;
+}
+
+.selectionsection .add {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.selectionsection .delete {
+  background: linear-gradient(135deg, #e53935, #e35d5b);
+}
+
+.selectionsection .add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(106, 17, 203, 0.3);
+}
+
+.selectionsection .delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.3);
+}
+
+.admin-hero {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  white-space: pre-line;
+}
+
+.admin-hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  white-space: pre-line;
+}
+
+.admin-title {
+  font-size: 3rem;
+  color: #2e3c55;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: pre-line;
+}
+
+.admin-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.admin-link {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.admin-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #406080;
+  transition: width 0.3s ease;
+}
+
+.admin-link:hover,
+.admin-link:focus {
+  color: #ffffff;
+}
+
+.admin-link:hover::after {
+  width: 100%;
+}
+
+/* Section blocks */
+.admin-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.admin-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease;
+}
+
+.admin-section:hover {
+  transform: translateY(-5px);
+}
+
+.admin-section h2 {
+  color: #3a5266;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 769px) {
+  .admin-hero {
+    position: relative;
+    top: 80px;
+  }
+
+  .admin-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+
+  .admin-links-grid {
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .admin-title {
+    font-size: 2.4rem;
+  }
+
+  .admin-link {
+    font-size: 1.2rem;
+  }
+
+  .admin-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 426px) {
+  .admin-hero {
+    position: relative;
+    top: 50px;
+  }
+
+  .admin-page {
+    min-width: 100vw;
+    width: 108vw;
+  }
+
+  .admin-links-grid {
+    padding-left: 32px;
+    text-align: center;
+    gap: 1.4rem;
+  }
+
+  .admin-title {
+    font-size: 1.8rem;
+    padding-left: 30px;
+  }
+
+  .admin-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .admin-hero {
+    min-height: 80vh;
+    top: 70px;
+  }
+  .admin-page {
+    min-width: 123vw;
+  }
+  .admin-hero-content {
+    padding-bottom: 0rem;
+    position: relative;
+    left: 30px;
+  }
+}
+@media (max-width: 321px) {
+  .admin-page {
+    min-width: 136vw;
+  }
+}
+
+.delete-heading {
+  padding-bottom: 50px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.delete-preview {
+  border: 1.5px solid #d1d5db;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+
+.delete-preview:hover {
+  box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+  border-color: #e74c3c;
+}
+
+.thumbnail {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+.delete-content {
+  flex: 1 1 300px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.delete-button:hover {
+  background: #c0392b;
+  box-shadow: 0 6px 15px rgba(192, 57, 43, 0.8);
+  scale: calc(1.1);
+}
+.del-but[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.del-but[disabled]::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 769px) {
+  .delete-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .thumbnail {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .delete-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 426px) {
+  .delete-heading {
+    font-size: 1.7rem;
+  }
+
+  .delete-preview {
+    padding: 12px 16px;
+  }
+
+  .thumbnail {
+    max-width: 200px;
+  }
+
+  .delete-button {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .delete-heading {
+    font-size: 1.5rem;
+  }
+
+  .thumbnail {
+    max-width: 170px;
+  }
+
+  .delete-button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 321px) {
+  .delete-heading {
+    font-size: 1.3rem;
+    padding-bottom: 30px;
+  }
+
+  .delete-preview {
+    padding: 10px 12px;
+  }
+
+  .thumbnail {
+    max-width: 140px;
+  }
+
+  .delete-button {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}
+.modal-backdrop-delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.868);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content-delete {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  max-width: 90%;
+  text-align: center;
+}
+.modal-content-delete .del-but {
+  margin: 0 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.728);
+}
+
+.modal-content-delete .del-but:first-child {
+  background-color: pink;
+  color: white;
+}
+.modal-content-delete .del-but:last-child {
+  background-color: #ccc;
+  color: #333;
+}

@@ -1,0 +1,311 @@
+.literary-diary-bg {
+  background-image: url('../../assets/rubriche_bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+
+.literary-diary-page {
+  position: relative;
+  top:80px;
+  background: rgba(0, 0, 0, 0.201);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.literary-diary-hero {
+  text-align: center;
+  width: 100vw;
+  background: linear-gradient(180deg, #000000ec, #4747472f);
+  padding: 60px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 50px 50px;
+  margin-bottom: 5vh;
+  white-space: pre-line;
+}
+
+.literary-diary-title {
+  margin-bottom: 5vw;
+  letter-spacing: 1px;
+  font-size: 4.5vw;
+  font-weight: 800;
+  color: #f1f1f1e8;
+  font-family: 'Playfair Display Semibold', serif;
+  white-space: pre-line;
+}
+
+.literary-diary-desc {
+  text-align: center;
+  font-size: 1.3vw;
+  color: #f1f1f1e8;
+  margin: 0 auto 2vw auto;
+  /* max-width: 850px; */
+  line-height: 1.7;
+  font-family: 'Playfair Display Semibold', serif;
+  white-space: pre-line;
+}
+
+.literary-diary-slider-bg {
+  width: 100vw;
+  background: #cadbe64c;
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.literary-diary-slider-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 350px;
+  margin: 0 auto;
+  padding: 0px 0 50px 0;
+}
+
+/* .literary-diary-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1.2px solid rgba(255, 255, 255, 0.3);
+  padding: 48px 40px;
+  transition: all 0.4s ease-in-out;
+} */
+
+.literary-diary-slide {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2vw;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1.2px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
+  max-height: 500px;
+  height: 500px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* overflow-y: auto; */
+}
+.literary-diary-slide-content{
+  padding: 15px;
+  /* background-color: #fff; */
+  border-radius: 8px;
+  max-height: 460px;
+  overflow-y: auto;
+  flex: 1;
+}
+.literary-diary-slide-img {
+  width: 280px;
+  height: 220px;
+  object-fit: cover;
+  image-rendering: auto;
+  border-radius: 12px;
+  border: 2px solid #b7c9d6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-right: 2vw;
+  flex-shrink: 0;
+}
+.literary-diary-slide-img:hover {
+  cursor: pointer;
+  scale: calc(1.05);
+}
+.literary-diary-slide-heading {
+  font-size: 2vw;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+.literary-diary-slide-text {
+  line-height: 3vh;
+  color: #333;
+  white-space: pre-line;
+  font-size: 1vw;
+  font-family: 'Playfair Display Semibold', serif;
+  font-weight:500;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 55px;
+  height: 55px;
+  background-color: #ffffffcc;
+  border-radius: 50%;
+  color: #34495e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #3498db;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet {
+  background: #3a5266;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e74c3c;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.fullscreen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.fullscreen-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.fullscreen-image {
+  width: 100%;
+  height: 100vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
+}
+
+.fullscreen-close-btn {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  background-color: #ffffffcc;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+.fullscreen-close-btn span{
+  position: absolute;
+  font-size: 20px;
+  top:10%;
+  left:35%;
+}
+.fullscreen-close-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .literary-diary-hero {
+    padding: 40px 16px 0px 16px;
+  }
+
+  .literary-diary-title {
+    font-size: 6vw;
+  }
+  .literary-diary-desc {
+    font-size: 2.1vw;
+  }
+
+  .literary-diary-slider-container {
+    width: 95vw;
+  }
+
+  .literary-diary-slide {
+    flex-direction: column;
+    gap: 4vw;
+    padding: 16px;
+  }
+
+  .literary-diary-slide-img {
+    width: 90vw;
+    height: 50vh;
+  }
+
+  .literary-diary-slide-heading {
+    font-size: 3vh;
+  }
+
+  .literary-diary-slide-text {
+    font-size: 2vh;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+  .literary-diary-page {
+    position: relative;
+    top:70px;
+  }
+}
+
+.literary-diary-sub-uv{
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px;
+  }
+  .literary-diary-slide-heading {
+    font-size: 4.4vw;
+  }
+  .literary-diary-slide-text h1,
+  .literary-diary-slide-text h2,
+  .literary-diary-slide-text h3{
+    font-size: 4vw;
+  }
+}

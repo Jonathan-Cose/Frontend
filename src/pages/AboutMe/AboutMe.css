@@ -1,0 +1,263 @@
+/* --- Base Styles (Desktop-first approach) --- */
+.aboutme-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 50px 80px 100px; /* Use fixed units for base styles */
+  background: linear-gradient(135deg, #e0c3fc86 0%, #8ec5fc9a 100%);
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: 100;
+  position: relative;
+  transition: background 0.6s ease;
+}
+
+.aboutme-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  max-width: 60%;
+}
+
+.aboutme-text h2 {
+  font-family: 'Playfair Display Semibold', serif;
+  font-size: clamp(30px, 4vw, 64px); /* Fluid font size with min/max caps */
+  color: #4a5a6a;
+  font-weight: 900;
+  text-align: left; /* Changed to left for desktop */
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
+
+.aboutme-text h4 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(16px, 1.45vw, 24px);
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.aboutme-text p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(16px, 1.1vw, 20px);
+  color: #222;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.aboutme-btn {
+  background: #5b7a91;
+  color: #fff;
+  padding: 0.87em 2.7em;
+  font-size: clamp(14px, 1.2vw, 20px);
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 15px;
+  border: 1px solid #5b7a91;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+}
+
+.aboutme-btn:hover {
+  background: #3a5266;
+  cursor: pointer;
+  transform: translateY(-0.2rem);
+  transition: transform 0.3s ease;
+  border-color: #364a5b;
+  box-shadow: 0 4px 12px #181818;
+}
+
+.aboutme-image {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutme-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Media Queries for Large Screens (min-width) --- */
+
+@media (min-width: 1921px) {
+  .aboutme-section {
+    padding: 120px 80px 100px 120px;
+  }
+  .aboutme-text {
+    padding: 60px;
+    max-width: 50%;
+  }
+  .aboutme-text h2 {
+    font-size: 72px; 
+    margin-bottom: 25px;
+  }
+  .aboutme-text h4 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .aboutme-text p {
+    font-size: 1vw;
+    margin-bottom: 40px;
+  }
+  .aboutme-btn {
+    font-size: 22px;
+  }
+  .aboutme-image img {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 3841px) {
+  .aboutme-section {
+    padding: 180px 120px 150px 180px;
+  }
+  .aboutme-text {
+    padding: 80px;
+  }
+  .aboutme-text h2 {
+    font-size: 110px;
+    margin-bottom: 40px;
+  }
+  .aboutme-text h4 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .aboutme-text p {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+  .aboutme-btn {
+    font-size: 30px;
+  }
+  .aboutme-image img {
+    max-width: 750px;
+  }
+}
+
+/* --- Media Queries for Smaller Screens (max-width) --- */
+@media (max-width: 1270px) {
+  .aboutme-text p {
+    font-size: 1.1vw;
+  }
+}
+@media (max-width: 900px) {
+  .aboutme-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+    top: 40px;
+  }
+  .aboutme-text {
+    padding: 20px;
+    max-width: 100%;
+    align-items: center;
+  }
+  .aboutme-text h2 {
+    font-size: 5vw;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .aboutme-text h4 {
+    font-size: 2.5vw;
+    text-align: center;
+  }
+  .aboutme-text p {
+    font-size: 1.35vw;
+    text-align: left;
+  }
+  .aboutme-btn {
+    font-size: 2vw;
+  }
+  .aboutme-image {
+    padding-top: 30px;
+  }
+  .aboutme-image img {
+    max-width: 80vw;
+  }
+}
+
+/* Phones: Max width up to 769px */
+/* @media (max-width: 769px) {
+  .aboutme-section {
+    padding: 30px 15px;
+  }
+  .aboutme-text h2 {
+    font-size: 6vw;
+  }
+  .aboutme-text h4 {
+    font-size: 3vw;
+  }
+  .aboutme-text p {
+    font-size: 1.8vw;
+  }
+  .aboutme-btn {
+    font-size: 2.2vw;
+  }
+} */
+
+/* Small Phones: Max width up to 426px */
+@media (max-width: 426px) {
+  .aboutme-section {
+    padding: 20px 10px;
+    top: 30px;
+  }
+  .aboutme-text h2 {
+    font-size: 7vw;
+  }
+  .aboutme-text h4 {
+    font-size: 4vw;
+  }
+  .aboutme-text p {
+    font-size: 2.2vw;
+    margin-bottom: 20px;
+  }
+  .aboutme-btn {
+    font-size: 3.5vw;
+    padding: 0.8em 2em;
+  }
+  .aboutme-image {
+    padding-top: 20px;
+  }
+  .aboutme-image img {
+    max-width: 90vw;
+  }
+}
+/* 
+@media (min-width: 1921px) {
+  .aboutme-section {
+    padding: 8vw 4vw;
+  }
+  .aboutme-text {
+    padding: 60px;
+  }
+  .aboutme-text h2 {
+    font-size: 48px;
+    margin-bottom: 25px;
+  }
+  .aboutme-text h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .aboutme-text p {
+    font-size: 20px;
+  }
+  .aboutme-image {
+    flex: 1;
+  }
+  .aboutme-image img {
+    max-width: 500px;
+  }
+} */

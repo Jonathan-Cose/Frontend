@@ -1,0 +1,75 @@
+/* Fullscreen center alignment */
+.notfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #3c3c55);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+
+    opacity: 0;
+    animation: fadeInPage 0.8s ease-in forwards;
+    animation-delay: 0.5s;
+  }
+  @keyframes fadeInPage {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .notfound-title {
+    font-size: 10rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    animation: glow 2s infinite alternate;
+  }
+  
+  .notfound-subtitle {
+    font-size: 1.5rem;
+    margin-top: -10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 0.5s;
+  }
+  
+
+  .notfound-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #ff4f81;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(255, 79, 129, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .notfound-button:hover {
+    background: #ff658d;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 79, 129, 0.6);
+    color: black;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #ff4f81, 0 0 10px #ff4f81, 0 0 20px #ff4f81;
+    }
+    100% {
+      text-shadow: 0 0 20px #ff4f81, 0 0 40px #ff4f81, 0 0 60px #ff4f81;
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  

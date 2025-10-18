@@ -1,0 +1,246 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #f5f6fa;
+}
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: left top;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 60%;
+  right: 8vw;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 40vw;
+  white-space: pre-line;
+}
+
+.hero-content h1 {
+  font-size: 6vw;
+  font-weight: 700;
+  color: #181818;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+  white-space: pre-line;
+}
+
+.hero-underline {
+  width: 60%;
+  height: 5px;
+  background: #181818;
+  margin: 0.5em 0 1em 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2vw;
+  color: #181818;
+  margin-bottom: 2em;
+  white-space: pre-line;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2em;
+}
+
+.hero-buttons button {
+  background: #5b7a91;
+  color: #fff;
+  padding: 1em 2.5em;
+  font-size: 1.1vw;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 15px;
+  border: 1px solid #5b7a91;
+}
+
+.hero-buttons button:hover {
+  background: #3a5266;
+  cursor: pointer;
+  transform: translateY(-0.2rem);
+  transition: transform 0.3s ease;
+  border-color:  #364a5b;
+  box-shadow: 0 4px 12px #181818; 
+
+}
+
+@media (max-width: 1025px) {
+  .home {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .hero-content h1 {
+    font-size: 7vw;
+  }
+  .hero-subtitle {
+    font-size: 2.3vw;
+    margin-bottom: 2em;
+  }
+
+  .hero-underline {
+    width: 50%;
+    margin: 0.5em auto 1em auto;
+  }
+
+  .hero-buttons {
+    gap: 1em;
+    align-items: center;
+  }
+
+  .hero-buttons button {
+    font-size: 1.5vw;
+    padding: 0.8em 2em;
+    width: auto;
+    min-width: 180px;
+  }
+
+  .bg-image {
+    width: 100vw;
+    object-position: center;
+  }
+}
+
+
+@media (max-width: 769px) {
+  .hero-content {
+    max-width: 90vw;
+    display: flex;
+    align-items: center;
+  }
+  .overlay {
+    position: absolute;
+    top: 30px;
+  }
+  .bg-image {
+    width: 100vw;
+    object-position: center top;
+    position: relative;
+    top: 30px;
+  }
+  .hero-content h1 {
+    font-size: 6vw;
+  }
+  .hero-subtitle {
+    font-size: 2vw;
+    margin-bottom: 2em;
+  }
+
+  .hero-underline {
+    width: 50%;
+    margin: 0em auto 1em auto;
+  }
+  .hero-buttons button {
+    font-size: 1.4vw;
+    padding: 0.8em 0em;
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+/* body, .home {
+  background: #f1f1f1 !important;
+} */
+
+@media (max-width: 426px) {
+  .hero-content {
+    position: relative;
+    top:72vh;
+    right:15vw;
+    display: flex;
+    align-items: center;
+  }
+  .bg-image {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center left;
+    z-index: 1;
+    opacity: 0.85;
+  }
+  .hero-content h1 {
+    font-size: 8.2vw;
+  }
+  .hero-subtitle {
+    font-size: 2.7vw;
+    margin-bottom: 10px;
+  }
+  .hero-underline {
+    width: 40%;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap:0.2rem;
+  }
+  .hero-buttons button {
+    font-size: 2.2vw;
+    padding: 0.8em 0em;
+    width: auto;
+    min-width: 150px;
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 376px) {
+  .hero-content {
+    position: relative;
+    top:60vh;
+    right:15vw;
+    display: flex;
+    align-items: center;
+  }
+
+}
+@media (max-width: 321px) {
+  .hero-content {
+    top:55vh;
+    right:7vh;
+  }
+  .hero-content h1 {
+    font-size: 10vw;
+  }
+  .hero-subtitle {
+    font-size: 3.1vw;
+  }
+  .hero-buttons button {
+    font-size: 2.7vw;
+    gap:0.3rem;
+  }
+}
