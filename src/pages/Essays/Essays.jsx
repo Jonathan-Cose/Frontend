@@ -35,7 +35,7 @@ const Essays = () => {
           <div className="essays-hero">
             <h1 className="essays-title">Saggi</h1>
             <p className="essays-desc">
-            <b>Saggi – Pensieri complessi per tempi complessi</b><br/>
+            {/* <b>Saggi – Pensieri complessi per tempi complessi</b><br/>
             Questa pagina raccoglie saggi che nascono da un intreccio vivo tra esperienza e studio, tra<br/> 
             l’aula e i libri, tra l’osservazione e la pratica. Sono riflessioni che uniscono la mia anima di<br/> 
             formatore, coach e facilitatore esperienziale con anni di ricerca nel campo della leadership,<br/> 
@@ -46,7 +46,15 @@ const Essays = () => {
             offrire chiavi di lettura nuove a chi lavora con le persone, nei gruppi, nelle organizzazioni.<br/>
             Sono mappe, non territori. Inviti alla riflessione, al confronto, al disaccordo fertile. Perché<br/> 
             oggi più che mai, abbiamo bisogno di pensiero critico, di sguardi ampi e di linguaggi capaci<br/> 
-            di accogliere la complessità senza semplificarla.
+            di accogliere la complessità senza semplificarla. */}
+
+            <b>Pensieri complessi per tempi complessi</b><br/>
+            Nascono dall’intreccio tra esperienza e studio, tra aula, libri e pratica.<br/>
+            Sono riflessioni per leggere il mondo con occhi sistemici, capaci di accogliere la complessità senza semplificarla.<br/>
+            Ogni saggio è un esperimento di connessione: tra idee, storie e modelli.<br/>
+            Mappe, non territori.<br/>
+            Inviti al pensiero critico e al disaccordo fertile.
+
             </p>
           </div>
       </div>

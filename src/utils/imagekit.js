@@ -1,5 +1,6 @@
 import ImageKit from "imagekit-javascript";
 import axios from 'axios';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // ImageKit configuration
 const imagekit = new ImageKit({
@@ -12,7 +13,7 @@ const imagekit = new ImageKit({
 export const uploadImage = async (file, folder = "essays") => {
     try {
             // 1. Get auth params from backend
-            const authRes = await fetch(`/api/auth/imagekit`);
+            const authRes = await fetch(`${API_BASE_URL}/api/auth/imagekit`);
             const authParams = await authRes.json();
 
             // 2. Upload image with auth
@@ -46,7 +47,7 @@ export const deleteImage = async (fileId) => {
             return { success: false, error: "Missing fileId" };
         }
         // await imagekit.deleteFile(fileId);
-        await axios.delete('/api/auth/imagekit/delete', {
+        await axios.delete(`${API_BASE_URL}/api/auth/imagekit/delete`, {
             data: { fileId }
         });
         return { success: true };

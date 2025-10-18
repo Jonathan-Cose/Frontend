@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from 'react-hot-toast';
 import { useAuthContext } from "../context/authContext";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function handleInputErrors({ username, password }) {
     if (!username || !password) {
@@ -20,7 +21,7 @@ const useLogin = () => {
 
         setLoading(true);
         try {
-            const res = await fetch("/api/auth/login", {
+            const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ userName: username, password }),

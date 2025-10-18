@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from 'react-hot-toast';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function handleInputErrors({ heading, category, text, pic, type }) {
     if (type === "poem") {
@@ -76,7 +77,7 @@ const useResources = () => {
     const getResources = async (resourceType) => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/getresources/get${resourceType}`, {
+            const res = await fetch(`${API_BASE_URL}/api/getresources/get${resourceType}`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
             });
@@ -120,21 +121,21 @@ const useResources = () => {
             
             if(type === "poem") {
                 // console.log("Before the api call:", heading, category, text)
-                res = await fetch(`/api/addresources/addpoem`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addpoem`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ heading, category, text }),
                 });
             }
             if (type === "essay") {
-                res = await fetch(`/api/addresources/addessay`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addessay`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ heading, category, text, pic }),
                 });
             }
             if(type === "racconti") {
-                res = await fetch(`/api/addresources/addracconti`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addracconti`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ heading, category, text }),
@@ -142,28 +143,28 @@ const useResources = () => {
             }
             if(type === "diabetes") {
                 // console.log("Here before api call",category,heading, text,pic,type);
-                res = await fetch(`/api/addresources/adddiabetes`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/adddiabetes`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ heading, category, text, pic }),
                 });
             }
             if(type === "addnewcat") {
-                res = await fetch(`/api/addresources/addnewcategory`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addnewcategory`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ heading, category, text ,pic}),
                 });
             }
             if (type === "picture") {
-                res = await fetch(`/api/addresources/addpicture`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addpicture`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ category, pic }),
                 });
             }
             if (type === "literaryDiary") {
-                res = await fetch(`/api/addresources/addliterarydiary`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addliterarydiary`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ heading, category, text, pic }),
@@ -171,7 +172,7 @@ const useResources = () => {
             }
             if (type === "picturehandle") {
                 // console.log("im here in picturehandle", heading, category, text, pic)
-                res = await fetch(`/api/addresources/addimagehandle`, {
+                res = await fetch(`${API_BASE_URL}/api/addresources/addimagehandle`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ heading, category, text, pic }),
@@ -211,7 +212,7 @@ const useResources = () => {
         
         setLoading(true);
         try {
-            const res = await fetch(`/api/updateresources/updatediabetesvisibility`, {
+            const res = await fetch(`${API_BASE_URL}/api/updateresources/updatediabetesvisibility`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
@@ -251,7 +252,7 @@ const useResources = () => {
     const deleteResource = async (resourceType, id) => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/deleteresources/${resourceType}/${id}`, {
+            const res = await fetch(`${API_BASE_URL}/api/deleteresources/${resourceType}/${id}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
             });
