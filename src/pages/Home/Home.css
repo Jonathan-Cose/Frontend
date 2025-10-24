@@ -1,3 +1,6 @@
+/* =========================
+   BASE STYLES
+   ========================= */
 .home {
   position: relative;
   min-height: 100vh;
@@ -30,7 +33,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 2;
 }
 
@@ -89,158 +92,242 @@
 
 .hero-buttons button:hover {
   background: #3a5266;
-  cursor: pointer;
   transform: translateY(-0.2rem);
   transition: transform 0.3s ease;
-  border-color:  #364a5b;
-  box-shadow: 0 4px 12px #181818; 
-
+  border-color: #364a5b;
+  box-shadow: 0 4px 12px #181818;
 }
 
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Medium desktops / laptops (≤1025px) */
 @media (max-width: 1025px) {
-  .home {
-    min-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-  }
   .hero-content h1 {
     font-size: 7vw;
   }
   .hero-subtitle {
     font-size: 2.3vw;
-    margin-bottom: 2em;
   }
-
   .hero-underline {
     width: 50%;
     margin: 0.5em auto 1em auto;
   }
-
   .hero-buttons {
     gap: 1em;
     align-items: center;
   }
-
   .hero-buttons button {
     font-size: 1.5vw;
     padding: 0.8em 2em;
-    width: auto;
     min-width: 180px;
   }
-
   .bg-image {
-    width: 100vw;
     object-position: center;
   }
 }
 
-
+/* Tablets (≤769px) */
 @media (max-width: 769px) {
   .hero-content {
     max-width: 90vw;
-    display: flex;
     align-items: center;
   }
   .overlay {
-    position: absolute;
     top: 30px;
   }
   .bg-image {
-    width: 100vw;
-    object-position: center top;
     position: relative;
     top: 30px;
+    object-position: center top;
   }
   .hero-content h1 {
     font-size: 6vw;
   }
   .hero-subtitle {
     font-size: 2vw;
-    margin-bottom: 2em;
   }
-
   .hero-underline {
     width: 50%;
-    margin: 0em auto 1em auto;
   }
   .hero-buttons button {
     font-size: 1.4vw;
-    padding: 0.8em 0em;
-    width: auto;
+    padding: 0.8em 0;
     min-width: 140px;
   }
 }
 
-/* body, .home {
-  background: #f1f1f1 !important;
-} */
-
+/* Small phones (≤426px) */
 @media (max-width: 426px) {
   .hero-content {
-    position: relative;
-    top:72vh;
-    right:15vw;
-    display: flex;
-    align-items: center;
-  }
-  .bg-image {
     position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    align-items: flex-start;
+    width: 80vw;
+  }
+
+  .bg-image {
     top: 20px;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
     object-fit: cover;
-    object-position: center left;
-    z-index: 1;
-    opacity: 0.85;
+    object-position: 8% center; /* Show more of his face */
+    opacity: 0.75;
   }
+
   .hero-content h1 {
-    font-size: 8.2vw;
+    font-size: 8vw;
   }
+
   .hero-subtitle {
-    font-size: 2.7vw;
+    font-size: 2.8vw;
     margin-bottom: 10px;
   }
+
   .hero-underline {
     width: 40%;
+    margin: 0.5em 0 1em 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .hero-buttons button {
+    font-size: 2.5vw;
+    padding: 0.8em 1.8em;
+    min-width: 150px;
+  }
+}
+
+/* Ultra-tall narrow screens (iPhone 14 Pro Max, etc.) */
+@media (max-width: 480px) and (min-height: 850px) {
+  .bg-image {
+    object-position: 10% 45%;
+    transform: scale(1.05);
+  }
+  .hero-content {
+    top: 55%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    align-items: flex-start;
   }
   .hero-buttons {
-    display: flex;
     flex-direction: column;
-    gap:0.2rem;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   .hero-buttons button {
-    font-size: 2.2vw;
-    padding: 0.8em 0em;
-    width: auto;
+    width: 150%;
+    max-width: 180px;
+  }
+}
+
+/* iPad Mini / portrait tablets (600–900px) */
+@media (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+  .bg-image {
+    object-position: 7% 40%;
+    transform: scale(1.02);
+  }
+  .hero-content {
+    top: 55%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .hero-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Medium-tall portrait devices (700–900px wide, ≥1000px tall) */
+@media (min-width: 700px) and (max-width: 900px) and (min-height: 1000px) {
+  .bg-image {
+    object-position: 7% 45%;
+    transform: scale(1.03);
+  }
+  .hero-content {
+    left: 30%;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Large tablets & iPad Pro (900–1300px) */
+@media (min-width: 900px) and (max-width: 1300px) {
+  .bg-image {
+    object-position: 5% 40%;
+    transform: scale(1);
+  }
+  .hero-content {
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero-buttons button {
     min-width: 150px;
-    min-height: 30px;
+    width: 250px;
   }
 }
 
-@media (max-width: 376px) {
+/* ✅ Nest Hub / mid-size tablets (900–1150px wide) */
+@media (min-width: 900px) and (max-width: 1150px) {
+  .bg-image {
+    object-position: 40% 40%;
+    transform: scale(1.02);
+  }
   .hero-content {
-    position: relative;
-    top:60vh;
-    right:15vw;
-    display: flex;
-    align-items: center;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
   }
-
-}
-@media (max-width: 321px) {
-  .hero-content {
-    top:55vh;
-    right:7vh;
-  }
-  .hero-content h1 {
-    font-size: 10vw;
-  }
-  .hero-subtitle {
-    font-size: 3.1vw;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
   .hero-buttons button {
-    font-size: 2.7vw;
-    gap:0.3rem;
+    font-size: 1.3vw;
+    padding: 0.9em 2.4em;
+    min-width: 160px;
+  }
+}
+
+/* ✅ Nest Hub Max / small desktops (1200–1366px) */
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .bg-image {
+    object-position: 10% 40%;
+    transform: scale(1.02);
+  }
+  .hero-content {
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .hero-buttons button {
+    font-size: 1.2vw;
+    padding: 0.9em 2.4em;
+    min-width: 160px;
   }
 }
