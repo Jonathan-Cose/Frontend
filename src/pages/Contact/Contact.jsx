@@ -74,7 +74,7 @@ const Contact = () => {
 
           {/* Social Links */}
           <div className="contact-socials">
-            <div><FaWhatsapp  className="dot" /> <a href="https://wa.me/+393491576105"> Whatsapp</a> </div>
+            <div><FaEnvelope  className="dot" /><a href="mailto:jonathancosentinosite@gmail.com?subject=Hello%20Jonathan&body=Hi%20there!">Email</a></div>
             <div><FaFacebookF className="dot" /><a href="https://www.facebook.com/jonathan.cosentino.9"> Facebook </a></div>
             <div><FaInstagram className="dot" /><a href="https://www.instagram.com/joncos90/"> Instagram </a></div>
           </div>

@@ -1,7 +1,7 @@
 import './Footer.css';
 import { SiWhatsapp } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaEnvelope } from "react-icons/fa";
 import img1 from "../../assets/BrandName2.png";
 
 const Footer = () => {
@@ -31,8 +31,8 @@ const Footer = () => {
           <div className="footer-section contact-links">
             <h4>Connessioni</h4>
             <div className="social-links">
-              <a href="https://wa.me/+393491576105" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <i className="fab fa-whatsapp"><SiWhatsapp /></i>
+              <a href="mailto:jonathancosentinosite@gmail.com?subject=Hello%20Jonathan&body=Hi%20there!" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                <i className="fab fa-whatsapp"><FaEnvelope /></i>
               </a>
               <a href="https://www.facebook.com/jonathan.cosentino.9" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fab fa-facebook-f"><FaFacebookF /></i>
